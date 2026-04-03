@@ -32,13 +32,8 @@ export const getUsersByFilter = async (
 
   const { name, email, role } = input;
 
-  // ✅ Normalize
   const normalizedEmail = email?.toLowerCase();
 
-  console.log('user role', role);
-  console.log('current user role', currentUserRole);
-
-  //  Validate role
   if (role && !['user', 'admin'].includes(role)) {
     throw new Error('Invalid role');
   }
@@ -96,13 +91,3 @@ users = users.map(u => ({
   isAdmin: u.role === "admin",
 }));
 */
-
-// If you want to go even more advanced:
-
-// Global error handler middleware
-// API response formatter (standard response shape)
-// Redis caching in service layer
-// RBAC using your role field
-// DTO layer for strict typing
-
-// If you want, I can help you convert this into a full production backend structure (like real SaaS apps) 🔥
